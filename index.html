@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>PatternLab - Pattern Lock Learning System</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e1e2f">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>PatternLab</h1>
+      <p>Learn & explore pattern lock security</p>
+    </header>
+
+    <main>
+      <section id="grid-section">
+        <div class="grid-container">
+          <div id="dot-grid" class="dot-grid"></div>
+          <canvas id="line-canvas"></canvas>
+        </div>
+        <div id="status-msg"></div>
+      </section>
+
+      <section id="controls">
+        <button id="btn-generate">⚡ Generate Strong</button>
+        <button id="btn-strength">📊 Check Strength</button>
+        <button id="btn-reset">🔄 Reset</button>
+        <button id="btn-explore">🔍 Explore Mode</button>
+        <button id="btn-heatmap">🌡️ Heatmap</button>
+        <button id="btn-compare">⚖️ Compare</button>
+        <button id="btn-challenge">⏱️ Challenge</button>
+        <button id="btn-share">🔗 Copy Link</button>
+      </section>
+
+      <section id="info-panel" class="info-card">
+        <h3>Pattern Info</h3>
+        <p id="pattern-display">Draw a pattern</p>
+        <p id="strength-display"></p>
+        <ul id="explanation-list"></ul>
+      </section>
+
+      <section id="explore-panel" style="display:none;">
+        <h2>Explore All Patterns</h2>
+        <div id="explore-progress"></div>
+        <div id="explore-list" class="pattern-list"></div>
+        <button id="load-more" style="display:none;">Load More</button>
+      </section>
+
+      <section id="compare-panel" style="display:none;">
+        <h2>Compare Patterns</h2>
+        <div id="compare-container"></div>
+      </section>
+
+      <section id="challenge-panel" style="display:none;">
+        <h2>Challenge Mode</h2>
+        <p>Make the strongest pattern in <span id="timer">20</span>s</p>
+        <div id="challenge-score" style="display:none;"></div>
+        <button id="challenge-start">Start Challenge</button>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="engine/validator.js"></script>
+  <script type="module" src="engine/generator.js"></script>
+  <script type="module" src="engine/strength.js"></script>
+  <script type="module" src="engine/heatmap.js"></script>
+  <script type="module" src="ui/grid.js"></script>
+  <script type="module" src="ui/canvas.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
